@@ -14,14 +14,16 @@ const [Alerta, setAlerta] = useState({
   visible: false,
 });
 const [Search, SetSearch]=useState("")
+function change(dataSearch){
 
+  console.log(dataSearch)
+}
 return (
   <>
     <InputSearch SetSearch={SetSearch}/>
     <div className='main'>
       <Listado Collaborators={filterList(Collaborators,Search)}/>
       <Formulario Alerta={Alerta} setAlerta={setAlerta} Collaborators={Collaborators} setCollaborators={setCollaborators} />
-      <p>{Search}</p>
     </div>
   </>
   )

@@ -10,7 +10,6 @@ export const saveNewCollab=(Collab,setCollaborators)=>{
         cargo: Collab[3],
         telefono: Collab[4]
     }
-
 BaseColaboradores.push(newCollab)
 setCollaborators(BaseColaboradores)
 }
