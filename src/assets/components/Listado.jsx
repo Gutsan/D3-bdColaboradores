@@ -4,7 +4,7 @@ export const Listado=({Collaborators})=>{
 
     return(
         <>
-        <Table  >
+        <Table striped bordered hover responsive >
         <thead>
           <tr>
             <th>Nombre</th>
