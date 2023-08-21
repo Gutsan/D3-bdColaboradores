@@ -12,7 +12,7 @@ import { InpFormnulario } from "./InpFormulario";
 import { validateEmail, validateEmpty } from "../logic/validateForm";
 import { saveNewCollab } from "../logic/newCollab";
 
-export function Formulario({ Alerta, setAlerta,setCollaborators}) {
+export function Formulario({ Alerta, setAlerta,setCollaborators, visible, setFormVisible}) {
   
   const [inputsValues, setInputValue] = useState(
     Array(infoInput.length).fill("")
@@ -32,7 +32,7 @@ export function Formulario({ Alerta, setAlerta,setCollaborators}) {
           saveNewCollab(inputsValues,setCollaborators)
           setInputValue(Array(infoInput.length).fill(""))
           setAlerta(msgSuccess);
-
+          setFormVisible(false)
       } else {
         setAlerta(msgEmail);
       }
@@ -40,10 +40,11 @@ export function Formulario({ Alerta, setAlerta,setCollaborators}) {
       setAlerta(msgDanger);
     }
   };
-
+const formatForm=`formulario ${visible?"formularioVisible":"formularioOculto"}`
   return (
-    <form className="formulario" onSubmit={validarInput}>
-      <p>Ingrese datos de Colaborador</p>
+    <form className={formatForm} onSubmit={validarInput} >
+      <h4>Nuevo Colaborador</h4>
+      <h5>Ingrese datos</h5>
       {infoInput.map((inp, index) => (
         <InpFormnulario
           key={index}

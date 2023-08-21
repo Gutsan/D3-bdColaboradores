@@ -4,7 +4,7 @@ export const Listado=({Collaborators})=>{
 
     return(
         <>
-        <Table >
+        <Table  >
         <thead>
           <tr>
             <th>Nombre</th>
